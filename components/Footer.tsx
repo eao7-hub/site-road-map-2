@@ -13,9 +13,14 @@ export const Footer: React.FC = () => {
           </p>
         </div>
         
-        <div className="text-slate-500 text-sm text-center md:text-right">
+        <div className="flex flex-col items-center md:items-end gap-2 text-slate-500 text-sm">
+           <a 
+            href="mailto:geracaodeenergiaifnmg@gmail.com"
+            className="text-green-500 hover:text-green-400 transition-colors"
+          >
+            geracaodeenergiaifnmg@gmail.com
+          </a>
           <p>&copy; {new Date().getFullYear()} Todos os direitos reservados.</p>
-          <p>Desenvolvido para fins acadêmicos e científicos.</p>
         </div>
       </div>
     </footer>

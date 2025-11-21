@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, GraduationCap } from 'lucide-react';
+import { Users } from 'lucide-react';
 import { Author } from '../types';
 
 export const Team: React.FC = () => {
@@ -12,41 +12,40 @@ export const Team: React.FC = () => {
   ];
 
   return (
-    <section id="autores" className="py-20 bg-white relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-green-50 rounded-full blur-3xl opacity-60"></div>
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-blue-50 rounded-full blur-3xl opacity-60"></div>
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="autores" className="py-24 bg-slate-50 dark:bg-slate-900 relative overflow-hidden transition-colors duration-300">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
+      
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-3 bg-green-100 text-green-600 rounded-full mb-4">
-            <Users size={24} />
+          <div className="inline-flex items-center justify-center p-3 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-full mb-4 shadow-sm">
+            <Users size={28} />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900">Equipe Técnica</h2>
-          <p className="mt-2 text-slate-500">Pesquisadores e Desenvolvedores</p>
+          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Equipe Técnica</h2>
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Pesquisadores e especialistas do Instituto Federal do Norte de Minas Gerais dedicados ao estudo energético.
+          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-center">
           {authors.map((author, index) => (
             <div 
               key={index} 
-              className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md hover:border-green-200 transition-all duration-300 flex flex-col items-center text-center"
+              className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center"
             >
-              <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4 text-slate-400">
-                <span className="text-xl font-bold">{author.name.charAt(0)}</span>
+              <div className="w-20 h-20 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center mb-6 text-slate-500 dark:text-slate-400 shadow-inner">
+                <span className="font-bold text-2xl text-green-600 dark:text-green-400">{author.name.charAt(0)}</span>
               </div>
-              <h3 className="font-bold text-slate-800 mb-1">{author.name}</h3>
-              <div className="flex items-center gap-1.5 text-sm text-slate-500 mt-auto">
-                <GraduationCap size={14} />
-                <span>{author.institution}</span>
-              </div>
+              
+              <h3 className="font-bold text-xl text-slate-800 dark:text-white mb-2">{author.name}</h3>
+              
+              <div className="h-1 w-12 bg-green-500 rounded-full mb-4"></div>
+              
+              <p className="text-slate-600 dark:text-slate-300 font-medium text-sm bg-slate-50 dark:bg-slate-900/50 px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-700">
+                {author.institution}
+              </p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-16 p-8 bg-slate-900 rounded-2xl text-center text-white">
-          <h3 className="text-xl font-bold mb-2">Instituto Federal do Norte de Minas Gerais</h3>
-          <p className="text-slate-400">Campus Montes Claros</p>
         </div>
       </div>
     </section>
