@@ -3,7 +3,6 @@ export interface Author {
   institution: string;
   email?: string;
   linkedin?: string;
-  image?: string;
 }
 
 export interface NavigationItem {

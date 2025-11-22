@@ -7,7 +7,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pb-40 pt-24 md:pt-10">
+    <section id="hero" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20 pb-10">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -21,25 +21,25 @@ export const Hero: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 text-center max-w-5xl px-6 flex flex-col items-center justify-center w-full h-full">
         
-        <div className="animate-fade-in-down">
-          <div className="inline-block mb-6 px-5 py-2 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-md shadow-lg">
+        <div className="animate-fade-in-down mb-6">
+          <div className="inline-block mb-4 px-6 py-2 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-md shadow-lg hover:bg-green-500/30 transition-colors cursor-default">
             <span className="text-green-300 font-bold text-sm uppercase tracking-widest">Estudo Estratégico MG</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-lg">
             Integração da Energia Solar à <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-300 to-green-200">
               Produção de H₂V
             </span>
           </h1>
           
-          <p className="text-lg md:text-2xl text-slate-200 mb-12 max-w-3xl mx-auto leading-relaxed font-light shadow-black drop-shadow-md">
+          <p className="text-lg md:text-xl text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed font-light shadow-black drop-shadow-md">
             Análise estratégica para a integração da energia solar fotovoltaica à produção de hidrogênio verde em Minas Gerais.
           </p>
         </div>
         
-        {/* Adjusted container width and padding to prevent cutting off */}
-        <div className="flex flex-col sm:flex-row gap-5 justify-center w-full max-w-2xl px-4 pb-4">
+        {/* Buttons Container */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-2xl px-4">
           <button 
             onClick={scrollToMap}
             className="flex-1 flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-green-500/40 hover:-translate-y-1 whitespace-normal sm:whitespace-nowrap"
@@ -56,8 +56,8 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/70 hidden md:block">
-          <ArrowDown size={32} />
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce text-white/50 hidden md:block">
+          <ArrowDown size={24} />
         </div>
       </div>
     </section>
