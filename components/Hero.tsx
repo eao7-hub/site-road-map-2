@@ -7,7 +7,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20 pb-10">
+    <section id="hero" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-24 pb-12 md:pt-20 md:pb-10">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -26,14 +26,14 @@ export const Hero: React.FC = () => {
             <span className="text-green-300 font-bold text-sm uppercase tracking-widest">Estudo Estratégico MG</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-lg">
+          <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight tracking-tight drop-shadow-lg">
             Integração da Energia Solar à <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-300 to-green-200">
               Produção de H₂V
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed font-light shadow-black drop-shadow-md">
+          <p className="text-base md:text-xl text-slate-200 mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed font-light shadow-black drop-shadow-md">
             Análise estratégica para a integração da energia solar fotovoltaica à produção de hidrogênio verde em Minas Gerais.
           </p>
         </div>

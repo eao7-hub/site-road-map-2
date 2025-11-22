@@ -4,14 +4,14 @@ import { Author } from '../types';
 
 const TeamMemberCard: React.FC<{ author: Author }> = ({ author }) => {
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-sm hover:shadow-md border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 flex items-center justify-between gap-4 group h-full">
+    <div className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm hover:shadow-md border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 flex items-center justify-between gap-3 group h-full overflow-hidden">
       
       {/* Info Section */}
       <div className="flex-1 min-w-0">
-        <h3 className="font-bold text-lg text-slate-900 dark:text-white leading-tight mb-1 truncate" title={author.name}>
+        <h3 className="font-bold text-base md:text-lg text-slate-900 dark:text-white leading-tight mb-1 truncate" title={author.name}>
           {author.name}
         </h3>
-        <p className="text-slate-500 dark:text-slate-400 text-sm truncate" title={author.institution}>
+        <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm truncate" title={author.institution}>
           {author.institution}
         </p>
       </div>
@@ -95,7 +95,7 @@ export const Team: React.FC = () => {
         </div>
 
         {/* Grid de cards horizontais */}
-        <div className="grid gap-5 md:grid-cols-2 lg:max-w-5xl mx-auto">
+        <div className="grid gap-4 md:gap-5 md:grid-cols-2 lg:max-w-5xl mx-auto">
           {authors.map((author, index) => (
             <TeamMemberCard key={index} author={author} />
           ))}
