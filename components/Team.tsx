@@ -9,35 +9,35 @@ export const Team: React.FC = () => {
       institution: "IFNMG Campus Montes Claros",
       email: "eao7@aluno.ifnmg.edu.br",
       linkedin: "http://linkedin.com/in/eduardo-oliveira-69a462390",
-      image: "./eduardo.jpg"
+      image: "./eduardo.jpeg"
     },
     { 
       name: "Marcos Vinicius Mendes da Silva", 
       institution: "IFNMG Campus Montes Claros",
       email: "mvms3@aluno.ifnmg.edu.br",
       linkedin: "https://www.linkedin.com/in/marcos-mendes-4b6894380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-      image: "./marcos.jpg"
+      image: "./marcos.jpeg"
     },
     { 
       name: "Matheus de Alencar Veloso", 
       institution: "IFNMG Campus Montes Claros",
       email: "mav6@aluno.ifnmg.edu.br",
       linkedin: "https://www.linkedin.com/in/matheus-d-64aa38235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-      image: "./matheus.jpg"
+      image: "./matheus.jpeg"
     },
     { 
       name: "Leandro Almeida Vasconcelos", 
       institution: "IFNMG Campus Montes Claros",
       email: "leandro.vasconcelos@ifnmg.edu.br",
       linkedin: "https://www.linkedin.com/in/leandro-almeida-vasconcelos-4436a548?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-      image: "./leandro.jpg"
+      image: "./leandro.jpeg"
     },
     { 
       name: "Gustavo Alves de Oliveira", 
       institution: "IFNMG Campus Montes Claros",
       email: "gao7@aluno.ifnmg.edu.br",
       linkedin: "https://www.linkedin.com/in/gustavo-oliveira-12370338b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-      image: "./gustavo.jpg"
+      image: "./gustavo.jpeg"
     },
   ];
 
