@@ -4,7 +4,7 @@ import { Author } from '../types';
 
 const TeamMemberCard: React.FC<{ author: Author }> = ({ author }) => {
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm hover:shadow-md border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 flex items-center justify-between gap-3 group h-full overflow-hidden">
+    <div className="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-sm hover:shadow-md border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 flex items-center justify-between gap-4 group h-full">
       
       {/* Info Section */}
       <div className="flex-1 min-w-0">
@@ -79,11 +79,11 @@ export const Team: React.FC = () => {
   ];
 
   return (
-    <section id="autores" className="py-20 bg-slate-50 dark:bg-slate-900 relative overflow-hidden transition-colors duration-300">
+    <section id="autores" className="w-full py-20 bg-slate-50 dark:bg-slate-900 relative overflow-hidden transition-colors duration-300 flex items-center justify-center">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
       
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center p-3 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-full mb-4 shadow-sm">
             <Users size={28} />
@@ -95,14 +95,14 @@ export const Team: React.FC = () => {
         </div>
 
         {/* 
-           Layout Flexbox Centralizado:
-           - flex-wrap: Permite que os itens quebrem linha.
-           - justify-center: Centraliza os itens, garantindo que a última linha (ímpar) fique no meio.
-           - w-full md:w-[calc(50%-1.25rem)]: Define largura de 50% (menos o gap) em desktops para simular 2 colunas.
+           Layout Flexbox Corrigido:
+           - gap-6: Espaçamento de 1.5rem.
+           - w-[calc(50%-0.75rem)]: 50% da largura menos METADE do gap. Isso garante que 2 cards somem exatamente 100% + 1 gap.
+           - Isso alinha as bordas externas perfeitamente.
         */}
-        <div className="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
           {authors.map((author, index) => (
-            <div key={index} className="w-full md:w-[calc(50%-1.25rem)]">
+            <div key={index} className="w-full md:w-[calc(50%-0.75rem)]">
               <TeamMemberCard author={author} />
             </div>
           ))}
