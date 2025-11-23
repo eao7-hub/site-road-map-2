@@ -3,6 +3,7 @@ export interface Author {
   institution: string;
   email?: string;
   linkedin?: string;
+  image?: string; // Mantendo opcional caso queira usar no futuro
 }
 
 export interface NavigationItem {
@@ -15,6 +16,7 @@ export interface GeoJsonFeature {
   properties: {
     name: string;
     id?: string;
+    sigla?: string;
     [key: string]: any;
   };
   geometry: any;

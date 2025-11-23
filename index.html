@@ -17,10 +17,15 @@
               'fade-in-down': {
                 '0%': { opacity: '0', transform: 'translateY(-20px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'slide-up': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
               }
             },
             animation: {
               'fade-in-down': 'fade-in-down 1s ease-out',
+              'slide-up': 'slide-up 0.3s ease-out',
             }
           }
         }
@@ -32,6 +37,23 @@
         font-family: 'Inter', sans-serif;
         scroll-behavior: smooth;
       }
+      .map-path {
+        vector-effect: non-scaling-stroke;
+      }
+      /* Custom Scrollbar for cleaner look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #334155;
+      }
     </style>
   <script type="importmap">
 {
@@ -40,12 +62,13 @@
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-    "d3": "https://aistudiocdn.com/d3@^7.9.0"
+    "d3": "https://cdn.jsdelivr.net/npm/d3@7/+esm",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
   }
 }
 </script>
 </head>
-  <body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+  <body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-300 overflow-hidden">
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
   </body>

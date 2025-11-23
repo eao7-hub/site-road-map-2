@@ -12,10 +12,21 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme, isDark }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      // Detecta scroll no elemento principal que tem overflow (App container) ou na janela
+      // Como usamos scroll snap no div principal, o window.scrollY pode ser 0
+      const scrollContainer = document.querySelector('.overflow-y-scroll');
+      if (scrollContainer) {
+          setIsScrolled(scrollContainer.scrollTop > 20);
+      } else {
+          setIsScrolled(window.scrollY > 20);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const scrollContainer = document.querySelector('.overflow-y-scroll');
+    const target = scrollContainer || window;
+    
+    target.addEventListener('scroll', handleScroll);
+    return () => target.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -30,8 +41,8 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme, isDark }) => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-md py-3' 
-          : 'bg-transparent py-5'
+          ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-md shadow-md py-3 border-b border-slate-200 dark:border-slate-800' 
+          : 'bg-slate-900/80 backdrop-blur-md border-b border-white/10 py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
@@ -60,7 +71,7 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme, isDark }) => {
             </button>
           ))}
           
-          <div className="h-6 w-px bg-slate-300/50 dark:bg-slate-600/50 mx-2"></div>
+          <div className={`h-6 w-px mx-2 ${isScrolled ? 'bg-slate-300 dark:bg-slate-700' : 'bg-white/20'}`}></div>
 
           <button 
             onClick={toggleTheme}
@@ -107,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleTheme, isDark }) => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 shadow-lg py-4 px-6 flex flex-col gap-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 shadow-lg py-4 px-6 flex flex-col gap-4">
           {['Sobre', 'KPIs', 'Mapa', 'Autores'].map((item) => (
             <button
               key={item}

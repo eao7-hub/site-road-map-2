@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -7,6 +7,7 @@ import { Roadmap } from './components/Roadmap';
 import { Team } from './components/Team';
 import { Footer } from './components/Footer';
 import { BrazilMap } from './components/BrazilMap';
+import { ChatBot } from './components/ChatBot';
 
 const App: React.FC = () => {
   const [isDark, setIsDark] = useState(false);
@@ -31,21 +32,40 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-green-200 selection:text-green-900 dark:selection:bg-green-900 dark:selection:text-green-100 transition-colors duration-300">
+    <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-green-200 selection:text-green-900 dark:selection:bg-green-900 dark:selection:text-green-100 transition-colors duration-300">
       <Navbar toggleTheme={toggleTheme} isDark={isDark} />
-      <main>
+      
+      <div className="snap-start">
         <Hero />
-        
-        {/* Mapa Interativo (Scrollytelling Section) */}
-        {/* O componente BrazilMap agora gerencia sua própria altura e layout */}
+      </div>
+      
+      {/* Mapa Interativo com D3.js - Ocupa tela cheia */}
+      <div className="snap-start h-screen">
         <BrazilMap />
+      </div>
 
+      <div className="snap-start min-h-screen flex items-center">
         <About />
+      </div>
+
+      <div className="snap-start min-h-screen flex items-center">
         <KPIs />
-        <Roadmap />
+      </div>
+
+      <div className="snap-start min-h-screen flex items-center">
+         <Roadmap />
+      </div>
+
+      <div className="snap-start min-h-screen flex items-center">
         <Team />
-      </main>
-      <Footer />
+      </div>
+
+      <div className="snap-start">
+        <Footer />
+      </div>
+      
+      {/* Chatbot Flutuante */}
+      <ChatBot />
     </div>
   );
 };
