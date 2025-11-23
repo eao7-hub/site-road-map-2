@@ -90,14 +90,21 @@ export const Team: React.FC = () => {
           </div>
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-3">Equipe Técnica</h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Pesquisadores e especialistas dedicados ao projeto.
+            Estudantes pesquisadores dedicados ao desenvolvimento do projeto.
           </p>
         </div>
 
-        {/* Grid de cards horizontais */}
-        <div className="grid gap-4 md:gap-5 md:grid-cols-2 lg:max-w-5xl mx-auto">
+        {/* 
+           Layout Flexbox Centralizado:
+           - flex-wrap: Permite que os itens quebrem linha.
+           - justify-center: Centraliza os itens, garantindo que a última linha (ímpar) fique no meio.
+           - w-full md:w-[calc(50%-1.25rem)]: Define largura de 50% (menos o gap) em desktops para simular 2 colunas.
+        */}
+        <div className="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto">
           {authors.map((author, index) => (
-            <TeamMemberCard key={index} author={author} />
+            <div key={index} className="w-full md:w-[calc(50%-1.25rem)]">
+              <TeamMemberCard author={author} />
+            </div>
           ))}
         </div>
       </div>
