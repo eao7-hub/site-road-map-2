@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -6,6 +6,7 @@ import { KPIs } from './components/KPIs';
 import { Roadmap } from './components/Roadmap';
 import { Team } from './components/Team';
 import { Footer } from './components/Footer';
+import { BrazilMap } from './components/BrazilMap';
 
 const App: React.FC = () => {
   const [isDark, setIsDark] = useState(false);
@@ -34,6 +35,11 @@ const App: React.FC = () => {
       <Navbar toggleTheme={toggleTheme} isDark={isDark} />
       <main>
         <Hero />
+        
+        {/* Mapa Interativo (Scrollytelling Section) */}
+        {/* O componente BrazilMap agora gerencia sua própria altura e layout */}
+        <BrazilMap />
+
         <About />
         <KPIs />
         <Roadmap />
